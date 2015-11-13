@@ -27,7 +27,8 @@
 // http://stackoverflow.com/questions/10455521/endless-recursive-calls-to-initwithcoder-when-instantiating-xib-in-storyboard
 -(id)initWithCoder:(NSCoder *)aDecoder{
     if ((self = [super initWithCoder:aDecoder])){
-        NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"MVSelectorScrollView" owner:self options:nil];
+        NSBundle *bundle = [NSBundle bundleForClass:[MVSelectorScrollView class]];
+        NSArray *views = [bundle loadNibNamed:@"MVSelectorScrollView" owner:self options:nil];
         UIView *view = [views objectAtIndex:0];
         [self addSubview:view];
     }
