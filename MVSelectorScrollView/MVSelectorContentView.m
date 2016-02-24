@@ -28,22 +28,23 @@
     CGRect labelFrame = CGRectMake(0.0f, 0.0f, size.width, size.height);
     self.label = [[UILabel alloc] initWithFrame:labelFrame];
     self.label.text = text;
-    self.label.font = [UIFont boldSystemFontOfSize:12.0f];
+    self.label.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:60];
     self.label.backgroundColor = [UIColor clearColor];
     self.label.textAlignment = NSTextAlignmentCenter;
-    self.label.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+    self.label.textColor = [UIColor colorWithWhite:0.9f alpha:0.3f];
     
-    self.label.layer.shadowOffset = CGSizeMake(0.0f, 2.5f);
-    self.label.layer.shadowOpacity = 0.15f;
-    self.label.layer.shadowRadius = 2.5f;
+//    self.label.layer.shadowOffset = CGSizeMake(0.0f, 2.5f);
+//    self.label.layer.shadowOpacity = 0.15f;
+//    self.label.layer.shadowRadius = 2.5f;
     
     [self addSubview:self.label];
 }
 
 - (void)setSelected:(BOOL)selected {
     
-    float white = selected ? 0.2f : 0.5f;
-    self.label.textColor = [UIColor colorWithWhite:white alpha:1.0f];
+    float white = selected ? 0.9f : 0.9f;
+    float alpha = selected ? 0.8f : 0.3f;
+    self.label.textColor = [UIColor colorWithWhite:white alpha:alpha];
 }
 
 @end
