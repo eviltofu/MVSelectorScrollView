@@ -30,6 +30,7 @@
         NSBundle *bundle = [NSBundle bundleForClass:[MVSelectorScrollView class]];
         NSArray *views = [bundle loadNibNamed:@"MVSelectorScrollView" owner:self options:nil];
         UIView *view = [views objectAtIndex:0];
+        view.frame = CGRectMake(0, 0, 375, 120);
         [self addSubview:view];
     }
     return self;
